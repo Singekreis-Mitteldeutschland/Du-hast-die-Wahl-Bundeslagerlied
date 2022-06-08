@@ -28,19 +28,19 @@ jobs:
         sudo apt-get update
         sudo apt-get install lilypond
         cd Rohdaten/Noten
-        lilypond Liedname_Noten.ly 
+        lilypond Du-hast-die-Wahl_Noten.ly 
     - name: Download a Build Artifact
       uses: actions/upload-artifact@v2
       with:
-        path: Rohdaten/Noten/Liedname_Noten.pdf
+        path: Rohdaten/Noten/Du-hast-die-Wahl_Noten.pdf
     - name: Compile LaTeX document
       uses: xu-cheng/latex-action@v2
       with:
-        root_file: Liedname_Liedblatt.tex
+        root_file: Du-hast-die-Wahl_Liedblatt.tex
     - name: Download a Build Artifact
       uses: actions/upload-artifact@v2
       with:
-        path: Liedname_Liedblatt.pdf
+        path: Du-hast-die-Wahl_Liedblatt.pdf
        
   
         
