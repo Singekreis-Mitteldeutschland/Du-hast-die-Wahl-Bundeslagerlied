@@ -11,56 +11,62 @@
  oddFooterMarkup = \markup{ \fill-line{ \line{" "} } }
 }
 \header{
-  title = "Frühlingserwachen"
-  subtitle = "für momo"
+  title = "Du hast die Wahl"
+ subtitle = "Bundeslagerlied 2022"
  
-composer = "Text und Melodie: kachān" 
+composer = "Text: Chrissi Brüggemann und Anastasia Schönfeld" 
+arranger = "Melodie: Singekreis Mitteldeutschland"
 }
 
-Akkorde = \chords { \time 6/8  \set chordNameLowercaseMinor = ##t  \germanChords
-       { 
-             \set noChordSymbol = ""
-             a2.:m c2. g2. a2.:m \once \set chordChanges = ##f  a2.:m d2.:m
-             c2. g2. e2. e1 a1:m c1
-             g1 a1:m \once \set chordChanges = ##f  a1:m d1:m c1 g1 a1:m e1
-           }
+Akkorde = \chords { \time 4/4  \set chordNameLowercaseMinor = ##t  \germanChords
+ g1 s1 c1 s1
+ d1 s1 e1:7 s1
+ c s1 g1 d1 e1:m s1
+ s g d g s c g s c s e:m c s g
+
 }
 
 
 \score {
 \new ChoirStaff <<
       \Akkorde
-\transpose f c'
+
     \new Staff {
       \new Voice = "melody" {
-\relative c {\key c\major  \time 3/4
-    \repeat volta 2 {a'2 b4 c2 c4 d4 c4 b4} \alternative{ { a2 e4 } {a4 r4 e'4}} f4 e4 d4
-    c4 c4 c4 b4 b4 b4 e2 r4\bar "||"  
- \time 2/2          \tempo \markup {
-    \concat { \smaller \general-align #Y #DOWN \note #"4" #1 " = " \smaller \general-align #Y #DOWN \note #"4" #1     }}
-e2 e2 \repeat volta 2 { a,4 a2 b4 c4 c2 c4
-                                      d4 c2 b4}
-    \alternative{ {a2. e4} { a4 r4 e'4 e4 } }
-    \repeat volta 2 {f4 e2 d4 c4 c2 c4 b4 b2 b4} \alternative{{ a2 r4 e'4} {e2 r2}}\bar"|."
+\relative c' {\key c\major  \time 4/4
+           \repeat volta 2 { g'4. g8 g4 a 4 b a4 g fis4 g4. g8 g4 a4 g4  r2
+            g8 g a4 a a4. a8 a4 a d c b4. b8 b4 c b4 r2
+            b8 b c4 c c8 c4. d4 c r4  c8 c c2 b a d b r2 } \alternative{{r2. b8 a8 \break}{r2. b8 b}}
+
+       b2 r8 b8 b b d d2 r8 d8 c b4 b r4 b8 b b2 r4 b8 b c8 c4. d4 e d2 b4( c4)  b2 r8 b8 b8 b8 c2. c8 c c4( d c) g b2 r8
+       b8 b b c4. d8 c4. d8 c2 r8 c8 c b g2 r2 \bar"|."
+         
+       
 }
-
-
       }
     }
-      \addlyrics {
-    \set stanza = "1. " Wenn die er -- sten Blü -- ten sich öff -- nen "" 
-    die Schnee -- häub -- chen schmel -- zend die Zeit nicht mehr steht.
-    Dann er -- wacht uns' -- re Mo -- mo, die Welt färbt sich bunt, sie ""
-    Dann er -- wacht uns' -- re Mo -- mo, die Welt färbt sich bunt, sie
-  }
-  \addlyrics{
-    und der Wind __ "" lei -- "" -- se "" "" weht, "" "" "" ""
-    "" "" "" "" "" "" "" "" "" streckt ih -- re Glie -- der und
-    tanzt ei -- ne "" "" Rund' "" "" streckt ih -- re Glie -- der und tanzt ei -- ne "" "" Rund'.
-  }
+    \new Lyrics = "firstVerse" \lyricsto "melody" { <<
+      {
+      
+\large \set stanza = #"1."Auf -- ge -- regt auf mei -- ner Rei -- se, Kribbeln in mei -- nem Bauch,
+ma -- che ich mich auf den Weg und weiß, die an -- der'n füh -- len's auch.
+Ich ent -- dec -- ke die Ge -- sich -- ter, sie er -- wi -- dern mei -- nen Blick. Und so
+   }
+
+\new Lyrics = "zweite"
+        \with { alignBelowContext = #"firstVerse" } {
+	  \set associatedVoice = "melody" \set stanza = "" \large 
+	  fah -- ren wir als Freun -- de, al -- le mit dem -- sel -- ben Ziel
+	  durch das gan -- ze Land zu ei -- nem Ort, doch wis -- sen noch nicht viel
+	  von den an -- der'n, die dort war -- ten, was be -- wegt und was ge -- schieht.
+                                                    } >>
+                                                
+\set stanza = #"Refrain:" Hey hey hey, wir geh'n zu -- sam -- men in die Zu -- kunft!
+Hey hey hey, wir er -- schaf -- fen uns' -- rer Träu -- me Weg. 
+Wo geht es hin? In die neu -- e Stadt.
+Du hast die Wahl, drum ge -- he nun den ers -- ten Schritt!
 
 
-
-        
-  >>
+    }
+>>
 }
