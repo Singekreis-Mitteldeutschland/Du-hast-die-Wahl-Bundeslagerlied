@@ -14,7 +14,7 @@
   title = "Du hast die Wahl"
  subtitle = "Bundeslagerlied 2022"
  
-composer = "Text: Chrissi Brüggemann und Anastasia Schönfeld" 
+composer = "Text: Anastasia Schönfeld und Chrissi Brüggemann" 
 arranger = "Melodie: Singekreis Mitteldeutschland"
 }
 
@@ -69,4 +69,5 @@ Du hast die Wahl, drum ge -- he nun den ers -- ten Schritt!
 
     }
 >>
+%\midi{ }
 }
