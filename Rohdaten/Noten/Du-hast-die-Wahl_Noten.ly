@@ -34,7 +34,7 @@ Akkorde = \chords { \time 4/4  \set chordNameLowercaseMinor = ##t  \germanChords
     \new Staff {
       \new Voice = "melody" {
 \relative c' {\key c\major  \time 4/4
-           \repeat volta 2 { g'4. g8 g4 a 4 b a4 g fis4 g4. g8 g4 a4 g4  r2
+           \repeat volta 2 { g'4. g8 g4 a 4 b a4 g fis4 g8( g4) g8 g4 a4 g4  r2
             g8 g a4 a a4. a8 a4 a d c b4. b8 b4 c b4 r2
             b8 b c4 c c8 c4. d4 c r4  c8 c c2 b a d b r2 } \alternative{{r2. b8 a8 \break}{r2. b8 b}}
 
